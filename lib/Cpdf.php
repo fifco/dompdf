@@ -4854,10 +4854,7 @@ EOT;
         elseif (extension_loaded("imagick")) {
             // Native cloning was added to pecl-imagick in svn commit 263814
             // the first version containing it was 3.0.1RC1
-            static $imagickClonable = null;
-            if ($imagickClonable === null) {
-                $imagickClonable = version_compare(Imagick::IMAGICK_EXTVER, '3.0.1rc1') > 0;
-            }
+            static $imagickClonable = true;
 
             $imagick = new \Imagick($file);
             $imagick->setFormat('png');
